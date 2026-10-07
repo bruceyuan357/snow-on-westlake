@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e3d8">
+  <meta name="description" content="湖心亭看雪、岳阳楼记、醉翁亭记。以画入文，在山水之间读三篇古文。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='3' fill='%23e8e3d8'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-family='serif' font-size='27' fill='%233e5146'%3E山%3C/text%3E%3C/svg%3E">
+  <title>山水三记</title>
+  <style>
+    :root { color-scheme: light; font-family: "Songti SC", "Noto Serif CJK SC", "STSong", "SimSun", serif; color: #2c3d33; background: #e8e3d8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #b1b99c80; }
+    main { max-width: 1480px; margin: auto; padding: 76px 6vw 52px; }
+    header { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-bottom: 35px; }
+    h1 { margin: 0; font-size: clamp(28px, 3vw, 40px); font-weight: 400; letter-spacing: .24em; }
+    header p { margin: 0; font-size: 14px; color: #687363; letter-spacing: .12em; line-height: 2; }
+    .works { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(22px, 3vw, 45px); }
+    .work { display: block; color: inherit; text-decoration: none; }
+    .work:focus-visible { outline: 2px solid #5b725f; outline-offset: 9px; }
+    .painting { overflow: hidden; aspect-ratio: 4 / 5; background: #d0d4c9; }
+    .painting img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 800ms cubic-bezier(.2,.7,.2,1); }
+    .snow img { object-position: 62% 50%; }
+    .lake img { object-position: 81% 50%; }
+    .forest img { object-position: 67% 50%; }
+    .caption { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 25px 0 10px; }
+    h2 { margin: 0; font-weight: 400; font-size: clamp(21px, 2vw, 26px); letter-spacing: .1em; }
+    .author { flex: none; color: #697163; font-size: 13px; letter-spacing: .12em; }
+    .excerpt { margin: 0; min-height: 4em; font-size: 14px; line-height: 2; letter-spacing: .025em; color: #667263; }
+    .rule { width: 30px; height: 1px; background: #7d8b7390; margin-top: 18px; transition: width 600ms ease; }
+    @media (hover: hover) { .work:hover img { transform: scale(1.035); } .work:hover .rule { width: 60px; } }
+    @media (max-width: 700px) {
+      main { padding: 42px 7vw 48px; }
+      header { display: block; padding-bottom: 30px; }
+      header p { margin-top: 12px; font-size: 13px; }
+      .works { grid-template-columns: 1fr; gap: 46px; }
+      .painting { aspect-ratio: 5 / 4; }
+      .caption { padding-top: 18px; }
+      h2 { font-size: 25px; }
+      .excerpt { min-height: 0; }
+      .rule { margin-top: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) { .painting img, .rule { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header><h1>山水三记</h1><p>以画入文，读山水，也读人心。</p></header>
+    <nav class="works" aria-label="选择一篇古文">
+      <a class="work snow" href="./hu-xin-ting-kan-xue/index.html">
+        <div class="painting"><img src="./assets/hu-xin-ting-kan-xue.webp" width="1536" height="1024" alt="雪雾笼罩的西湖与一叶小舟" fetchpriority="high"></div>
+        <div class="caption"><h2>湖心亭看雪</h2><span class="author">张岱</span></div>
+        <p class="excerpt">独往湖心亭看雪。</p><div class="rule" aria-hidden="true"></div>
+      </a>
+      <a class="work lake" href="./yueyang-lou-ji/index.html">
+        <div class="painting"><img src="./assets/yueyang-lou-ji.webp" width="1536" height="1024" alt="岳阳楼临洞庭湖而立，湖山隐入晨光"></div>
+        <div class="caption"><h2>岳阳楼记</h2><span class="author">范仲淹</span></div>
+        <p class="excerpt">先天下之忧而忧，后天下之乐而乐。</p><div class="rule" aria-hidden="true"></div>
+      </a>
+      <a class="work forest" href="./zuiweng-ting-ji/index.html">
+        <div class="painting"><img src="./assets/zuiweng-ting-ji.webp" width="1536" height="1024" alt="琅琊群山青翠深秀，一座山亭藏在林泉之间"></div>
+        <div class="caption"><h2>醉翁亭记</h2><span class="author">欧阳修</span></div>
+        <p class="excerpt">醉翁之意不在酒，在乎山水之间也。</p><div class="rule" aria-hidden="true"></div>
+      </a>
+    </nav>
+  </main>
+</body>
+</html>
