@@ -1,11 +1,36 @@
-I have downloaded `three-classics-github.zip`, which contains three completed literary web works and a collection page. Publish this bundle to my existing GitHub repository **bruceyuan357/snow-on-westlake** and make the collection accessible through **GitHub Pages**. Carry out the upload and deployment, not just a plan.
+Publish the contents of eight-classics-github.zip to my existing GitHub
+repository bruceyuan357/snow-on-westlake and deploy the collection with GitHub Pages.
+This expands my existing three works to eight, adding 石壕吏、茅屋为秋风所破歌、
+小石潭记、滕王阁序、天净沙·秋思（马致远，古道西风瘦马）. Complete the deployment, not just a plan.
 
-1. Locate the downloaded ZIP or its extracted folder. If it is not available in your workspace or Downloads folder, ask me for its local path. Extract it to a temporary directory and verify `SHA256SUMS` using `sha256sum -c SHA256SUMS` or the platform's equivalent. Do not add the ZIP itself to Git.
-2. Use my existing GitHub authentication. Inspect the target repository, its default branch, Pages configuration and existing workflows. Reuse a suitable clean local checkout or clone the repository. Keep existing Git history, unrelated files and uncommitted work. Do not force-push. If the repository does not exist, create `bruceyuan357/snow-on-westlake` as a public repository if the authenticated account is authorized to do so; do not silently choose another owner. Preserve the visibility of an existing repository.
-3. Copy the bundle contents to the repository root, including hidden files and `.github/workflows/pages.yml`. The root `index.html` is the new collection page. Preserve the three completed works at `hu-xin-ting-kan-xue/index.html`, `yueyang-lou-ji/index.html` and `zuiweng-ting-ji/index.html`, together with their embedded images and interactions. Keep the included source files and MIT license. Do not redesign the works, regenerate their images or introduce a framework or package dependencies.
-4. Reconcile any existing Pages deployment workflow so only one workflow deploys this site. Use the repository's appropriate publishing branch and adjust `on.push.branches` if it is not `main`. Enable Pages with the **GitHub Actions** build source, preserving any existing custom-domain setting. With `gh`, inspect `repos/bruceyuan357/snow-on-westlake/pages`; create a missing Pages configuration using POST, or update an existing one using PUT, with `build_type=workflow`. If the existing setup already has `build_type=workflow`, leave it as is.
-5. Run the workflow's static staging step locally and verify the staged site from a local HTTP server under a repository subpath. Confirm the collection page opens all three works, all 31 embedded paintings load, scrolling works, and each work's clickable hotspots lead to the intended scenes on desktop and mobile. Preserve the complete Chinese prose. The site requires no build or credentials to run. Node.js is only needed if you intentionally rebuild the two longer essays from `literary-pages/`.
-6. Review the resulting diff, commit the website and deployment configuration, and push without overwriting unrelated changes. If branch protection requires a pull request, create one and report the required merge rather than claiming the site is deployed. Otherwise, enable Pages before the push or manually dispatch the deployment workflow after configuring it.
-7. Monitor the GitHub Actions run to completion. Fix deployment errors that you can resolve with the current authorization. Verify the actual public URL returned by Pages and the three work URLs after deployment. Report the repository URL, commit, successful deployment run and public links. If account permissions, repository policy or a required merge blocks publishing, state the exact remaining action and distinguish uploaded files from a live site.
+1. Locate the ZIP in my Downloads or workspace, or ask for its path if absent.
+   Extract to a temporary folder and verify SHA256SUMS. Use my existing GitHub
+   authentication. Inspect the target repository, branch and Pages configuration.
+2. Reuse a suitable clean checkout or clone the repository. Preserve Git history,
+   unrelated files and uncommitted work; do not force-push. Copy the bundle's
+   contents to the repository root, including hidden files and the workflow.
+   Do not commit the ZIP itself. Keep all eight HTML files and all 85 art files.
+3. Preserve the designs, complete Chinese texts, painting order, click transitions,
+   and images. This collection references each work's local art folder, so upload
+   these folders with the HTML. Do not replace them with dependencies or a framework.
+4. Reconcile any existing Pages workflow so only one publishes the site. Use the
+   correct publishing branch and adjust the workflow if it is not main. Set Pages
+   build_type to workflow, preserving the existing custom domain and visibility.
+   If the repository is missing, create it under bruceyuan357 only if my authenticated
+   account is authorized; do not choose a different owner silently.
+5. Run the included workflow's static staging step locally. Verify the collection
+   and all eight work URLs under a repository subpath. Check all 85 pictures load,
+   the complete text is present, scrolling and clicking work on desktop and phone.
+   Export 天净沙·秋思 with tools/export-standalone.py, and check that its HTML
+   opens and its two click transitions work when double-clicked locally offline;
+   the cloud browser blocks file:// URLs, so that native-file check needs the Mac.
+   Node.js is optional for source rebuilds; deployment needs no application build.
+6. Review the diff, commit and push. If branch protection requires a PR, create one
+   and report the required merge instead of claiming the site is live. Otherwise
+   monitor the Pages deployment workflow and resolve failures within the available
+   authorization. Dispatch the workflow if Pages was configured after the push.
+7. Verify the actual public collection URL and eight work URLs. Return the repository
+   URL, commit, successful Actions run and working public links. If permissions,
+   policy or a required merge blocks deployment, state the exact remaining action.
 
-All runtime assets are already included. Keep the original designs and interactions intact. Continue through the available steps without asking me to reconfirm routine implementation choices.
+Continue through routine steps without asking me to reconfirm implementation choices.

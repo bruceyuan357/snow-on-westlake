@@ -1,17 +1,13 @@
-name: Publish the three literary works
-
+name: Publish the eight literary works
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
-
 concurrency:
   group: github-pages
   cancel-in-progress: false
-
 jobs:
   prepare:
     runs-on: ubuntu-latest
@@ -19,22 +15,19 @@ jobs:
       contents: read
       pages: read
     steps:
-      - name: Check out the website
-        uses: actions/checkout@v4
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
       - name: Collect the static website
         run: |
           mkdir -p _site
           cp index.html .nojekyll _site/
-          cp -R assets hu-xin-ting-kan-xue yueyang-lou-ji zuiweng-ting-ji _site/
+          cp -R hu-xin-ting-kan-xue yueyang-lou-ji zuiweng-ting-ji shi-hao-li mao-wu-wei-qiu-feng-suo-po-ge xiao-shi-tan-ji teng-wang-ge-xu tian-jing-sha-qiu-si _site/
+          if [ -d assets ]; then cp -R assets _site/; fi
           if [ -f CNAME ]; then cp CNAME _site/; fi
           find _site -type f -name '*.md' -delete
-      - name: Upload the website
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
   deploy:
     needs: prepare
     runs-on: ubuntu-latest
@@ -45,6 +38,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy GitHub Pages
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4

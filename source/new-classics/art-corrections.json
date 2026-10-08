@@ -1,0 +1,26 @@
+[
+  {
+    "id": "shi-voices",
+    "instruction": "Remove the TWO civilian men completely: the grey-bearded old man directly behind the grandmother, and the seated middle-aged man at lower-left foreground. Keep only the elderly grandmother and the county officers at the right; she alone faces them. Reconstruct empty earthen wall, doorway and ground naturally where those two men were. Preserve the woman's face, gesture, night light, officers and the entire beautiful painted style. This is after the old man has escaped, so absolutely no old man or other male civilian may appear. No new people, no text.",
+    "path": "/workspace/generated_images/exec-f512b42b-d0aa-429b-b8e8-00fa60b34651.png",
+    "prompt": "Edit this existing literary painting carefully. Remove the TWO civilian men completely: the grey-bearded old man directly behind the grandmother, and the seated middle-aged man at lower-left foreground. Keep only the elderly grandmother and the county officers at the right; she alone faces them. Reconstruct empty earthen wall, doorway and ground naturally where those two men were. Preserve the woman's face, gesture, night light, officers and the entire beautiful painted style. This is after the old man has escaped, so absolutely no old man or other male civilian may appear. No new people, no text."
+  },
+  {
+    "id": "shi-family",
+    "instruction": "Keep ONLY the young mother and her swaddled baby. Remove every other human figure: seated elderly man at left, the elderly woman turned toward the mother in foreground, both uniformed officers in background. Naturally replace removed figures with the poor cottage's simple wood wall, hanging coarse curtain, empty stool and dark space. Keep the mother and child, small charcoal brazier, framing and delicate warm/cold cinematic painting style. No additional people anywhere, no text.",
+    "path": "/workspace/generated_images/exec-3e8b56ab-959a-4d75-93a5-522f70c08bd0.png",
+    "prompt": "Edit this existing literary painting carefully. Keep ONLY the young mother and her swaddled baby. Remove every other human figure: seated elderly man at left, the elderly woman turned toward the mother in foreground, both uniformed officers in background. Naturally replace removed figures with the poor cottage's simple wood wall, hanging coarse curtain, empty stool and dark space. Keep the mother and child, small charcoal brazier, framing and delicate warm/cold cinematic painting style. No additional people anywhere, no text."
+  },
+  {
+    "id": "shi-volunteer",
+    "instruction": "Remove ALL three people within the doorway behind the elderly woman: the old man, the young woman, and the older child. Leave the cottage interior dark and empty with only rough furniture. Keep the elderly woman standing alone on the threshold carrying her bundle, and keep the small departing officers at distant left. This scene must not show the escaped old man or additional children. Preserve all other beautiful night painting details and light, no new people or text.",
+    "path": "/workspace/generated_images/exec-e8064007-bd31-420a-9083-20d4273d19f7.png",
+    "prompt": "Edit this existing literary painting carefully. Remove ALL three people within the doorway behind the elderly woman: the old man, the young woman, and the older child. Leave the cottage interior dark and empty with only rough furniture. Keep the elderly woman standing alone on the threshold carrying her bundle, and keep the small departing officers at distant left. This scene must not show the escaped old man or additional children. Preserve all other beautiful night painting details and light, no new people or text."
+  },
+  {
+    "id": "shi-hearth",
+    "instruction": "Remove the grey-bearded old man and ALL county officers in the upper/right background. Keep ONLY the elderly grandmother leaning to the earthen stove, the clay pot, her hands and the little fire. Replace removed figures with dark cottage wall and shadowed doorway; absolutely no other people. Preserve this intimate cinematic painting, its dark quiet upper-left and the warm fire. The old man has escaped and is not present. No text.",
+    "path": "/workspace/generated_images/exec-cec66eda-2b1a-42e9-a06c-61b5aacd7e99.png",
+    "prompt": "Edit this existing literary painting carefully. Remove the grey-bearded old man and ALL county officers in the upper/right background. Keep ONLY the elderly grandmother leaning to the earthen stove, the clay pot, her hands and the little fire. Replace removed figures with dark cottage wall and shadowed doorway; absolutely no other people. Preserve this intimate cinematic painting, its dark quiet upper-left and the warm fire. The old man has escaped and is not present. No text."
+  }
+]

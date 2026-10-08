@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e3ded0">
+<meta name="description" content="柳宗元《小石潭记》。10 幅画，完整原文。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Crect%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22%23e3ded0%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2229%22%20text-anchor%3D%22middle%22%20font-family%3D%22serif%22%20font-size%3D%2228%22%20fill%3D%22%23465346%22%3E%E6%BD%AD%3C%2Ftext%3E%3C%2Fsvg%3E">
+<title>小石潭记</title>
+<script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches && innerHeight >= 600) { document.documentElement.classList.add('motion-candidate'); setTimeout(() => document.documentElement.classList.remove('motion-candidate'), 3000); }</script>
+<style>:root { color-scheme: light; --serif: "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "STSong", "SimSun", serif; }
+*, *::before, *::after { box-sizing: border-box; }
+html { background: #e3ded0; }
+body { margin: 0; font-family: var(--serif); -webkit-font-smoothing: antialiased; }
+main { position: relative; z-index: 1; }
+::selection { background: #98744960; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.scene { position: relative; isolation: isolate; width: 100%; height: 100svh; min-height: 720px; overflow: hidden; background: #e3ded0; }
+.scene-frame { position: relative; width: 100%; height: 100%; min-height: inherit; overflow: hidden; isolation: isolate; }
+.scene-image { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--position, 50% 50%); z-index: -2; }
+.scene-frame::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg, #ece4d565, #e8e1d420 38%, transparent 67%); }
+.prose { position: absolute; left: 8.5%; top: 13%; width: min(630px, 47%); margin: 0; color: #26352e; font-size: clamp(17px, 1.38vw, 21px); font-weight: 400; line-height: 2.2; letter-spacing: .075em; text-wrap: pretty; text-shadow: 0 1px 12px #f0e8d850; }
+.prose p { margin: 0; }
+.prose p + p { margin-top: 20px; }
+.prose:focus { outline: none; }
+.dense .prose { font-size: clamp(16px, 1.28vw, 19px); }
+.spoken { display: block; font-size: 1.24em; line-height: 2; }
+.night { color-scheme: dark; background: #14201e; }
+.night .scene-frame::after { background: linear-gradient(90deg, #0c19188c, #111f1c25 43%, transparent 72%); }
+.night .prose { color: #f0e7d4; text-shadow: 0 2px 16px #08130ee0; }
+.portal { display: block; position: absolute; z-index: 3; width: 92px; height: 92px; border-radius: 50%; transform: translate(-50%, -50%); cursor: zoom-in; -webkit-tap-highlight-color: transparent; }
+.portal[hidden] { display: none; }
+.portal::before, .portal::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; }
+.portal::before { width: 27px; height: 27px; background: #ffd3980b; box-shadow: 0 0 16px #e7ad674d; }
+.portal::after { width: 32px; height: 32px; border: 1px solid #bba477ad; animation: ember 3s ease-in-out infinite; }
+.night .portal::after { border-color: #f8d1a16b; }
+.portal:hover::after { border-color: #ffe0b8; background: #ffd7a417; }
+.portal:focus-visible { outline: 1px solid #f9d09c; outline-offset: -15px; background: #edbf7920; }
+@keyframes ember { 0%,100% { opacity: .35; transform: translate(-50%, -50%) scale(.75); } 50% { opacity: .9; transform: translate(-50%, -50%) scale(1.15); } }
+#passage { position: fixed; inset: 0; z-index: 20; overflow: hidden; background: #101915; pointer-events: auto; }
+#passage[hidden] { display: none; }
+#passage img { position: absolute; display: block; max-width: none; object-fit: cover; will-change: transform, opacity; }
+.passage-text { position: absolute; inset: 0; background: transparent; pointer-events: none; }
+.motion-candidate:not(.motion) .scene:first-child .prose { opacity: 0; }
+.motion .scene { height: calc(var(--screen, 100svh) * var(--distance, 2)); min-height: 0; overflow: visible; background: transparent; }
+.motion .scene-frame { position: fixed; inset: 0; height: var(--screen, 100svh); min-height: 0; visibility: hidden; opacity: 0; }
+.motion .scene-frame.is-present .scene-image { will-change: transform, filter; }
+.motion .scene-frame.is-present .prose p { will-change: transform, opacity; }
+.motion .scene-image { transform-origin: 50% 50%; backface-visibility: hidden; }
+.motion .portal { transition: opacity .3s; }
+#living-paintings { display: none; position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.motion.has-living-paintings #living-paintings { display: block; }
+.motion.has-living-paintings .scene-image { opacity: 0; will-change: auto; }
+#mist { position: fixed; inset: 0; z-index: 12; pointer-events: none; opacity: 0; background: radial-gradient(ellipse at 43% 56%, #f4f0e7, #e4e8e3a0 52%, transparent 100%); }
+@media (min-width: 1800px) { .prose { left: 11%; top: 15%; } }
+@media (min-width: 601px) and (min-aspect-ratio: 4/5) {
+  .soft-light .scene-frame::after { background: radial-gradient(ellipse at 14% 10%, #ede9d5dd, #e4e9d799 24%, #e4e9d726 46%, transparent 70%); }
+}
+@media (max-aspect-ratio: 4/5) {
+  .scene-image { object-position: var(--mobile-position, 60% 50%); }
+  .prose { left: 8%; top: 8%; width: 84%; }
+  .scene-frame::after { background: linear-gradient(180deg, #eee5d9d9, #eee5d959 40%, transparent 64%); }
+  .night .scene-frame::after { background: linear-gradient(180deg, #0c1918dd, #0c191878 38%, transparent 68%); }
+  .mobile-bottom .prose { top: auto; bottom: 7%; }
+  .night.mobile-bottom .scene-frame::after { background: linear-gradient(0deg, #0c1918eb, #0c1918a3 42%, transparent 72%); }
+}
+@media (max-width: 600px) {
+  .scene { min-height: 740px; }
+  .scene-image { object-position: var(--mobile-position, 60% 50%); }
+  .prose { left: 8%; top: 7%; width: 84%; font-size: 16px; line-height: 2.12; letter-spacing: .035em; }
+  .prose p + p { margin-top: 16px; }
+  .dense .prose { font-size: 15px; line-height: 2.05; }
+  .dense .prose p + p { margin-top: 13px; }
+  .spoken { font-size: 1.22em; }
+  .mobile-bottom .prose { top: auto; bottom: 7%; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+@media print {
+  body, .scene { color: black; background: white; }
+  .scene, .motion .scene { height: auto; min-height: 0; overflow: visible; margin-bottom: 14px; }
+  .scene-image, .scene-frame::after, .portal, #passage, #mist, #living-paintings { display: none !important; }
+  .scene-frame, .motion .scene-frame { position: relative; inset: auto; height: auto; min-height: 0; opacity: 1 !important; visibility: visible !important; }
+  .prose p { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .scene .prose { position: static; width: 100%; font-size: 13pt; color: black; text-shadow: none; letter-spacing: 0; line-height: 1.8; }
+  .prose p + p { margin-top: 0; }
+  .spoken { display: inline; font-size: inherit; }
+}
+</style>
+</head>
+<body>
+<h1 class="sr-only">小石潭记</h1>
+<canvas id="living-paintings" aria-hidden="true"></canvas>
+<main><section class="scene" id="bamboo" aria-label="隔篁竹，闻水声" data-distance="1.9" data-camera="1.08,1.025" data-weather="0.98,-0.16,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:88% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/01-bamboo.webp" width="1536" height="1024" alt="幽深竹林中小路蜿蜒，诗人驻足听见岩石后传来的清泉声。" fetchpriority="high" decoding="async">
+    <div class="prose" tabindex="-1"><p>从小丘西行百二十步，<br>隔篁竹，闻水声，<br>如鸣珮环，心乐之。</p></div>
+    
+  </div>
+</section>
+<section class="scene soft-light" id="pool" aria-label="下见小潭" data-distance="1.9" data-camera="1.025,1.075" data-weather="0.48,-0.09,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:78% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/02-pool.webp" width="1536" height="1024" alt="竹林之间露出一湾清澈石潭，水色透亮，青苔与藤蔓沿岸生长。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>伐竹取道，下见小潭，<br><span class="spoken">水尤清冽。</span></p></div>
+    <a class="portal" href="#stone" data-x="0.672" data-y="0.647" aria-label="点击潭中水光，走近完整的石底" hidden></a>
+  </div>
+</section>
+<section class="scene soft-light" id="stone" aria-label="全石以为底" data-distance="1.9" data-camera="1.08,1.025" data-weather="0.37,0,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:68% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/03-stone.webp" width="1536" height="1024" alt="清水覆盖一整片盘曲石底，石脊翻出水面，形成小屿与参差岩岸。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>全石以为底，近岸，卷石底以出，<br>为坻，为屿，为嵁，为岩。</p></div>
+    
+  </div>
+</section>
+<section class="scene soft-light" id="vines" aria-label="青树翠蔓" data-distance="1.9" data-camera="1.025,1.075" data-weather="0.61,-0.23,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:62% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/04-vines.webp" width="1536" height="1024" alt="潭边青树与碧绿藤蔓交织垂落，水上的叶影被微风轻轻摇散。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>青树翠蔓，蒙络摇缀，<br>参差披拂。</p></div>
+    <a class="portal" href="#fish" data-x="0.569" data-y="0.527" aria-label="点击垂入潭中的藤影，探看水下游鱼" hidden></a>
+  </div>
+</section>
+<section class="scene soft-light" id="fish" aria-label="皆若空游无所依" data-distance="1.9" data-camera="1.08,1.025" data-weather="0.2,0,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:60% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/05-fish.webp" width="1536" height="1024" alt="游鱼悬在透明潭水中，日光直落石底，每条鱼的影子都清楚可见。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>潭中鱼可百许头，<br><span class="spoken">皆若空游无所依。</span></p><p>日光下澈，影布石上。</p></div>
+    <a class="portal" href="#darting" data-x="0.604" data-y="0.553" aria-label="点击清水中的游鱼，走近它们的倏忽往来" hidden></a>
+  </div>
+</section>
+<section class="scene soft-light" id="darting" aria-label="似与游者相乐" data-distance="1.9" data-camera="1.025,1.075" data-weather="0.15,0,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:63% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/06-darting.webp" width="1536" height="1024" alt="几尾小鱼从静止中忽然游散，细小水纹滑过浅石与落叶。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>佁然不动，俶尔远逝，<br>往来翕忽，似与游者相乐。</p></div>
+    
+  </div>
+</section>
+<section class="scene soft-light" id="stream" aria-label="斗折蛇行" data-distance="1.9" data-camera="1.08,1.025" data-weather="0.55,-0.08,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:76% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/07-stream.webp" width="1536" height="1024" alt="潭水向西南流出，在交错岩岸与竹影之间曲折隐现，尽头没入山林。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>潭西南而望，斗折蛇行，明灭可见。</p><p>其岸势犬牙差互，不可知其源。</p></div>
+    
+  </div>
+</section>
+<section class="scene night" id="stillness" aria-label="凄神寒骨" data-distance="1.9" data-camera="1.025,1.075" data-weather="0.62,-0.09,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:72% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/08-stillness.webp" width="1536" height="1024" alt="竹树围合的冷青色潭边，柳宗元独坐石上，清亮山水渐渐转为幽寂。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>坐潭上，四面竹树环合，<br>寂寥无人，凄神寒骨，<br><span class="spoken">悄怆幽邃。</span></p></div>
+    
+  </div>
+</section>
+<section class="scene" id="leaving" aria-label="乃记之而去" data-distance="1.9" data-camera="1.08,1.025" data-weather="0.74,-0.12,0" data-fire="0.5,0.5" style="--position:50% 50%;--mobile-position:70% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/09-leaving.webp" width="1536" height="1024" alt="旅人收起书卷沿竹径离去，身后小潭只剩清水与无人的石岸。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>以其境过清，不可久居，<br>乃记之而去。</p></div>
+    <a class="portal" href="#writing" data-x="0.702" data-y="0.51" aria-label="点击旅人手中的书卷，进入柳宗元记游时的心境" hidden></a>
+  </div>
+</section>
+<section class="scene night dense" id="writing" aria-label="记同游者" data-distance="2.2" data-camera="1.025,1.075" data-weather="0.98,0,0.07" data-fire="0.533,0.58" style="--position:50% 50%;--mobile-position:76% 50%">
+  <div class="scene-frame">
+    <img class="scene-image" src="./art/10-writing.webp" width="1536" height="1024" alt="想象中的柳宗元灯下记游，案边书卷尚未收起，窗外竹影与清潭余光伴着孤独。" loading="lazy" decoding="async">
+    <div class="prose" tabindex="-1"><p>同游者：吴武陵，龚古，<br>余弟宗玄。</p><p>隶而从者，崔氏二小生：<br>曰恕己，曰奉壹。</p></div>
+    
+  </div>
+</section></main>
+<div id="mist" aria-hidden="true"></div>
+<div id="passage" aria-hidden="true" hidden></div>
+<script>// Animate the existing paintings; the original images remain the readable fallback.
+function createLivingPaintings(scenes) {
+  const canvas = document.getElementById('living-paintings');
+  const root = document.documentElement;
+  let gl;
+  try {
+    gl = canvas.getContext('webgl', { alpha: false, antialias: false, depth: false, powerPreference: 'low-power' });
+  } catch { return null; }
+  if (!gl) return null;
+  let failed = false;
+  let lastDraw = -100;
+  let ready = false;
+  let quality = 1;
+  let slowFrames = 0;
+  const textures = new Map();
+  const uniforms = {};
+  const shaders = [];
+  let program;
+  let buffer;
+  const weather = scenes.map(scene => scene.element.dataset.weather.split(',').map(Number));
+  const fire = scenes.map(scene => scene.element.dataset.fire.split(',').map(Number));
+  const vertex = `
+    attribute vec2 aPosition;
+    varying vec2 vScreen;
+    void main() {
+      vScreen = vec2(aPosition.x * .5 + .5, .5 - aPosition.y * .5);
+      gl_Position = vec4(aPosition, 0., 1.);
+    }
+  `;
+  const fragment = `
+    #ifdef GL_FRAGMENT_PRECISION_HIGH
+    precision highp float;
+    #else
+    precision mediump float;
+    #endif
+    varying vec2 vScreen;
+    uniform sampler2D uImageA, uImageB;
+    uniform vec4 uCropA, uCropB;
+    uniform vec3 uCameraA, uCameraB, uWeatherA, uWeatherB;
+    uniform vec2 uFireA, uFireB, uSize;
+    uniform float uTime, uBlend, uIndexA, uIndexB;
+
+    float hash(vec2 p) {
+      p = fract(mod(p, 127.) * vec2(123.34, 345.45));
+      p += dot(p, p + 34.345);
+      return fract(p.x * p.y);
+    }
+    float noise(vec2 p) {
+      vec2 cell = floor(p), f = fract(p);
+      f = f * f * (3. - 2. * f);
+      return mix(mix(hash(cell), hash(cell + vec2(1.,0.)), f.x),
+                 mix(hash(cell + vec2(0.,1.)), hash(cell + vec2(1.,1.)), f.x), f.y);
+    }
+    float cloud(vec2 p) {
+      return noise(p) * .65 + noise(p * 2.13 + 7.2) * .35;
+    }
+    vec2 imageUV(vec4 crop, vec3 camera) {
+      vec2 screen = (vScreen - .5 - camera.yz) / camera.x + .5;
+      return (screen - crop.xy) / crop.zw;
+    }
+    float pollen(vec2 p, float density, float speed, float seed) {
+      p.x *= uSize.x / uSize.y;
+      p *= density;
+      p += vec2(uTime * speed * .27, -uTime * speed) + seed;
+      vec2 cell = floor(p), f = fract(p);
+      vec2 center = .18 + .64 * vec2(hash(cell + seed), hash(cell + 91.7));
+      center.x += sin(uTime * .5 + hash(cell) * 6.28) * .065;
+      float radius = .014 + hash(cell + 31.2) * .019;
+      float distance = length((f - center) * vec2(1., .78));
+      return (1. - smoothstep(radius * .35, radius * 1.9, distance))
+        * step(.76, hash(cell + 48.3)) * (.25 + hash(cell + 22.1) * .5);
+    }
+    float rainfall(vec2 p) {
+      p.x = p.x * uSize.x / uSize.y + p.y * .19;
+      p *= vec2(125., 5.);
+      p.y -= uTime * 5.5;
+      vec2 cell = floor(p), f = fract(p);
+      float seed = hash(cell);
+      float line = 1. - smoothstep(.005, .055, abs(f.x - (.15 + seed * .7)));
+      float length = smoothstep(.08,.20,f.y) * (1. - smoothstep(.42,.94,f.y));
+      return line * length * step(.48,seed);
+    }
+    vec3 painting(sampler2D image, vec4 crop, vec3 camera, vec3 climate, vec2 fire, float index, float direction) {
+      vec2 uv = imageUV(crop, camera);
+      float water = smoothstep(climate.x, climate.x + .14, uv.y);
+      float ripple = sin(uv.y * 145. - uTime * .62) * .00052
+                   + sin(uv.y * 267. + uTime * .37) * .00024;
+      ripple *= 1. + max(0., climate.y) * 2.;
+      float breath = (noise(vec2(uv.y * 38., uTime * .18)) - .5) * (.00034 + max(0.,-climate.y) * .001);
+      // Strong autumn wind subtly moves the upper painting; prose stays steady.
+      float wind = max(0., -climate.y - .23) * 8.;
+      breath += sin(uTime * .95 + uv.y * 9.) * wind * .001 * (1. - smoothstep(.35,.95,uv.y));
+      float passing = sin(uBlend * 3.141593);
+      vec2 drift = vec2(cloud(vScreen * vec2(3., 9.) + vec2(uTime * .02, 0.)) - .5,
+                        sin(vScreen.x * 7. + uTime * .15) * .2);
+      vec2 moving = uv + vec2(breath + ripple * water, 0.) + drift * passing * .009 * direction;
+      vec3 color = texture2D(image, clamp(moving, .001, .999)).rgb;
+      vec2 ember = (uv - fire) / vec2(.046, .065);
+      float pulse = .55 + sin(uTime * 2.7) * .18 + sin(uTime * 6.3 + 1.1) * .10;
+      color += vec3(1., .39, .07) * exp(-dot(ember, ember) * 1.4) * climate.z * pulse;
+      if (climate.y > 0.) color = mix(color, vec3(.68,.72,.70), rainfall(vScreen) * climate.y * .21);
+      if (climate.y < 0.) {
+        float dust = pollen(vScreen, 11., .06, 3.1) + pollen(vScreen, 23., .04, 16.4) * .35;
+        color = mix(color, vec3(.91,.85,.63), clamp(dust * -climate.y, 0., .16));
+      }
+      return color;
+    }
+    void main() {
+      vec3 color = painting(uImageA, uCropA, uCameraA, uWeatherA, uFireA, uIndexA, 1.);
+      if (uBlend > .0001) {
+        vec3 next = painting(uImageB, uCropB, uCameraB, uWeatherB, uFireB, uIndexB, -1.);
+        // The dissolve follows long, fine bands of mist instead of a flat fade.
+        float grain = cloud(vScreen * vec2(2.5, 23.) + vec2(uTime * .01, 0.));
+        float threshold = .37 + grain * .26;
+        float dissolve = smoothstep(threshold - .24, threshold + .24, uBlend);
+        color = mix(color, next, dissolve);
+      }
+      color += (hash(floor(vScreen * uSize) + mod(floor(uTime * 8.), 97.)) - .5) * .002;
+      gl_FragColor = vec4(color, 1.);
+    }
+  `;
+  function disable() {
+    if (failed) return;
+    failed = true;
+    root.classList.remove('has-living-paintings');
+    for (const texture of textures.values()) gl.deleteTexture(texture);
+    if (buffer) gl.deleteBuffer(buffer);
+    if (program) gl.deleteProgram(program);
+    shaders.forEach(shader => gl.deleteShader(shader));
+  }
+  canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); disable(); });
+  try {
+    program = gl.createProgram();
+    for (const [type, source] of [[gl.VERTEX_SHADER, vertex], [gl.FRAGMENT_SHADER, fragment]]) {
+      const shader = gl.createShader(type);
+      shaders.push(shader);
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) throw new Error('Painting shader unavailable');
+      gl.attachShader(program, shader);
+    }
+    gl.linkProgram(program);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw new Error('Painting program unavailable');
+    gl.useProgram(program);
+    buffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, -1,1, 1,-1, 1,1]), gl.STATIC_DRAW);
+    const position = gl.getAttribLocation(program, 'aPosition');
+    gl.enableVertexAttribArray(position);
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+    for (const name of ['ImageA','ImageB','CropA','CropB','CameraA','CameraB','WeatherA','WeatherB','FireA','FireB','Size','Time','Blend','IndexA','IndexB']) {
+      uniforms[name] = gl.getUniformLocation(program, 'u' + name);
+    }
+    gl.uniform1i(uniforms.ImageA, 0);
+    gl.uniform1i(uniforms.ImageB, 1);
+  } catch { disable(); return null; }
+
+  function resize() {
+    if (failed) return;
+    const ratio = Math.min(devicePixelRatio || 1, 1.5, Math.sqrt(1800000 / (innerWidth * innerHeight))) * quality;
+    canvas.width = Math.round(innerWidth * ratio);
+    canvas.height = Math.round(innerHeight * ratio);
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    gl.uniform2f(uniforms.Size, canvas.width, canvas.height);
+    lastDraw = -100;
+  }
+  function textureFor(scene) {
+    if (textures.has(scene.index)) return textures.get(scene.index);
+    if (!scene.photo.complete || !scene.photo.naturalWidth) return null;
+    const texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, scene.photo);
+    textures.set(scene.index, texture);
+    return texture;
+  }
+  function bind(scene, suffix, slot, texture) {
+    gl.activeTexture(gl.TEXTURE0 + slot);
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    const crop = scene.crop;
+    gl.uniform4f(uniforms['Crop' + suffix], crop.x, crop.y, crop.width, crop.height);
+    gl.uniform3f(uniforms['Camera' + suffix], scene.pose.scale, scene.pose.x / scene.width, scene.pose.y / scene.height);
+    gl.uniform3fv(uniforms['Weather' + suffix], weather[scene.index]);
+    gl.uniform2fv(uniforms['Fire' + suffix], fire[scene.index]);
+    gl.uniform1f(uniforms['Index' + suffix], scene.index);
+  }
+  return {
+    get healthy() { return !failed; },
+    resize,
+    draw(index, blend, time, force = false) {
+      if (failed || (!force && time - lastDraw < 32)) return;
+      if (ready && !force) {
+        slowFrames = time - lastDraw > 75 ? slowFrames + 1 : Math.max(0, slowFrames - 1);
+        if (slowFrames >= 10 && quality > .65) {
+          quality = Math.max(.65, quality * .82);
+          slowFrames = 0;
+          resize();
+        }
+      }
+      const a = scenes[index], b = scenes[Math.min(index + 1, scenes.length - 1)];
+      try {
+        const textureA = textureFor(a), textureB = textureFor(b);
+        if (!textureA || !a.crop) return;
+        if (blend > 0 && (!textureB || !b.crop)) {
+          root.classList.remove('has-living-paintings');
+          return;
+        }
+        bind(a, 'A', 0, textureA);
+        bind(textureB && b.crop ? b : a, 'B', 1, textureB || textureA);
+        gl.uniform1f(uniforms.Time, time / 1000);
+        gl.uniform1f(uniforms.Blend, blend);
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        // Keep GPU memory bounded as longer works pass through their paintings.
+        for (const [key, texture] of textures) {
+          if (textures.size <= 4) break;
+          if (key !== a.index && key !== b.index) { gl.deleteTexture(texture); textures.delete(key); }
+        }
+        if (!ready && gl.getError() !== gl.NO_ERROR) { disable(); return; }
+        ready = true;
+        lastDraw = time;
+        root.classList.add('has-living-paintings');
+      } catch { disable(); }
+    }
+  };
+}
+
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const passage = document.getElementById('passage');
+  const mist = document.getElementById('mist');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const printMedia = matchMedia('print');
+  const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+  const elements = [...document.querySelectorAll('.scene')];
+  const distances = elements.map(element => Number(element.dataset.distance));
+  const camera = elements.map(element => element.dataset.camera.split(',').map(Number));
+  const scenes = elements.map((element, index) => ({
+    element, index, frame: element.querySelector('.scene-frame'), photo: element.querySelector('.scene-image'),
+    prose: element.querySelector('.prose'), paragraphs: [...element.querySelectorAll('.prose > p')],
+    portal: element.querySelector('.portal'), start: 0, span: 0, width: 0, height: 0, point: null,
+    pose: { scale: 1, x: 0, y: 0 }
+  }));
+  const byId = new Map(scenes.map(scene => [scene.element.id, scene]));
+  const clamp = value => Math.max(0, Math.min(1, value));
+  const smooth = value => { const x = clamp(value); return x * x * (3 - 2 * x); };
+  const set = (element, property, value) => { if (element.style[property] !== value) element.style[property] = value; };
+  let enabled = false;
+  let initialized = false;
+  let screenHeight = innerHeight;
+  let virtualY = scrollY;
+  let frameRequest = 0;
+  let lastTick = 0;
+  let introAt = 0;
+  let flight = null;
+  let dominant = 0;
+  let paintings = null;
+  let paintingRequested = false;
+  let preparedIndex = -1;
+  const pointer = { x: 0, y: 0, targetX: 0, targetY: 0 };
+
+  function getLocation(y = virtualY) {
+    let index = 0;
+    for (const scene of scenes) if (y >= scene.start) index = scene.index;
+    const scene = scenes[index];
+    return { index, ratio: (y - scene.start) / Math.max(scene.span, 1) };
+  }
+  function measure() {
+    screenHeight = innerHeight;
+    root.style.setProperty('--screen', screenHeight + 'px');
+    for (const scene of scenes) {
+      scene.start = scene.element.offsetTop;
+      scene.span = scene.element.offsetHeight;
+      scene.width = scene.frame.clientWidth;
+      scene.height = scene.frame.clientHeight;
+      const photo = scene.photo;
+      if (photo.naturalWidth && scene.width && scene.height) {
+        const scale = Math.max(scene.width / photo.naturalWidth, scene.height / photo.naturalHeight);
+        const position = getComputedStyle(photo).objectPosition.split(' ').map(value => parseFloat(value) / 100);
+        scene.crop = {
+          x: (1 - photo.naturalWidth * scale / scene.width) * position[0],
+          y: (1 - photo.naturalHeight * scale / scene.height) * position[1],
+          width: photo.naturalWidth * scale / scene.width,
+          height: photo.naturalHeight * scale / scene.height
+        };
+        if (scene.portal) scene.point = {
+          x: scene.crop.x * scene.width + photo.naturalWidth * scale * Number(scene.portal.dataset.x),
+          y: scene.crop.y * scene.height + photo.naturalHeight * scale * Number(scene.portal.dataset.y)
+        };
+      }
+      placePortal(scene);
+    }
+    paintings?.resize();
+  }
+  function placePortal(scene) {
+    if (!scene.portal || !scene.point) return;
+    const pose = enabled ? scene.pose : { scale: 1, x: 0, y: 0 };
+    const x = scene.width / 2 + (scene.point.x - scene.width / 2) * pose.scale + pose.x;
+    const y = scene.height / 2 + (scene.point.y - scene.height / 2) * pose.scale + pose.y;
+    set(scene.portal, 'left', x.toFixed(2) + 'px');
+    set(scene.portal, 'top', y.toFixed(2) + 'px');
+    scene.portal.hidden = x < 0 || y < 0 || x > scene.width || y > scene.height;
+  }
+  function paintScene(scene, y, entry, blend, now, landing = false) {
+    const local = (y - scene.start) / Math.max(scene.span, 1);
+    const hold = smooth(local / .76);
+    const exit = smooth((local - .62) / .24);
+    const [from, to] = camera[scene.index];
+    const pointerX = landing ? 0 : pointer.x;
+    const pointerY = landing ? 0 : pointer.y;
+    const scale = from + (to - from) * hold + Math.max(0, blend) * .035;
+    const pan = (value, size) => {
+      const margin = Math.max(0, (scale - 1) * size / 2 - 3);
+      return Math.max(-margin, Math.min(margin, value));
+    };
+    scene.pose = {
+      scale,
+      x: pan(pointerX * 12 + (hold - .5) * (scene.index % 2 ? 6 : -6), scene.width),
+      y: pan(pointerY * 8 + (hold - .5) * -10, scene.height)
+    };
+    const { x, y: panY } = scene.pose;
+    set(scene.photo, 'transform', `translate3d(${x.toFixed(3)}px,${panY.toFixed(3)}px,0) scale(${scale.toFixed(5)})`);
+    const blur = ((1 - entry) * 2 + blend * 1.5) * (innerWidth < 700 ? .55 : 1);
+    set(scene.photo, 'filter', blur > .02 ? `blur(${blur.toFixed(2)}px)` : 'none');
+    let phase = (y - scene.start) / screenHeight;
+    if (scene.index === 0 && introAt && !landing) phase += -.10 + smooth((now - introAt) / 1300) * .32;
+    scene.paragraphs.forEach((paragraph, index) => {
+      const appearance = smooth((phase + .10 - index * .07) / .22);
+      const opacity = appearance * (1 - exit);
+      set(paragraph, 'opacity', opacity.toFixed(4));
+      set(paragraph, 'transform', `translate3d(0,${((1 - appearance) * 14 - exit * 6).toFixed(2)}px,0)`);
+      const fuzz = (1 - appearance) * 1.8 + exit;
+      set(paragraph, 'filter', fuzz > .04 ? `blur(${fuzz.toFixed(2)}px)` : 'none');
+    });
+    if (scene.portal) {
+      placePortal(scene);
+      const interactive = entry > .96 && exit < .15;
+      set(scene.portal, 'opacity', interactive ? '1' : '0');
+      set(scene.portal, 'pointerEvents', interactive ? 'auto' : 'none');
+      scene.portal.tabIndex = interactive ? 0 : -1;
+    }
+  }
+  function render(now = performance.now(), force = false) {
+    if (!enabled || (flight?.staging && !flight.landed)) return;
+    const { index, ratio } = getLocation();
+    if (index !== preparedIndex) {
+      preparedIndex = index;
+      // Decode the next paintings during the reading pause, before their dissolve starts.
+      Promise.allSettled(scenes.slice(Math.max(0, index - 1), index + 3).map(scene => scene.photo.decode())).then(schedule);
+    }
+    const blend = index < scenes.length - 1 ? smooth((ratio - .76) / .24) : 0;
+    dominant = blend > .6 ? index + 1 : index;
+    for (const scene of scenes) {
+      const current = scene.index === index;
+      const incoming = scene.index === index + 1 && blend > .0001;
+      const visible = current || incoming;
+      set(scene.frame, 'visibility', visible ? 'visible' : 'hidden');
+      set(scene.frame, 'opacity', current ? '1' : incoming ? blend.toFixed(5) : '0');
+      scene.frame.classList.toggle('is-present', visible);
+      scene.frame.inert = scene.index !== dominant;
+      if (visible) paintScene(scene, virtualY, current ? 1 : blend, current ? blend : 0, now);
+    }
+    paintings?.draw(index, blend, now, force);
+    const haze = Math.sin(blend * Math.PI) * (scenes[index].element.classList.contains('night') ? .018 : .05);
+    set(mist, 'opacity', haze.toFixed(4));
+  }
+  function tick(now) {
+    frameRequest = 0;
+    if (!enabled || (flight?.staging && !flight.landed)) return;
+    const delta = Math.min(100, lastTick ? now - lastTick : 16);
+    lastTick = now;
+    virtualY += (scrollY - virtualY) * (1 - Math.exp(-delta / 78));
+    pointer.x += (pointer.targetX - pointer.x) * (1 - Math.exp(-delta / 120));
+    pointer.y += (pointer.targetY - pointer.y) * (1 - Math.exp(-delta / 120));
+    if (Math.abs(scrollY - virtualY) < .08) virtualY = scrollY;
+    render(now);
+    if (paintings?.healthy || Math.abs(scrollY - virtualY) > .08 || Math.abs(pointer.x - pointer.targetX) > .001 || Math.abs(pointer.y - pointer.targetY) > .001 || (introAt && now - introAt < 1400)) schedule();
+  }
+  function schedule() {
+    if (enabled && !frameRequest && !document.hidden) frameRequest = requestAnimationFrame(tick);
+  }
+  function synchronize() { virtualY = scrollY; lastTick = 0; render(performance.now(), true); schedule(); }
+  function goTo(scene, updateHistory = false, focus = false) {
+    scenes.forEach(item => item.paragraphs.forEach(paragraph => paragraph.getAnimations().forEach(animation => animation.cancel())));
+    const top = enabled ? scene.start + screenHeight * .38 : scene.element.offsetTop;
+    if (updateHistory && location.hash !== '#' + scene.element.id) history.pushState(null, '', '#' + scene.element.id);
+    window.scrollTo({ top, behavior: 'instant' });
+    if (enabled) synchronize();
+    if (focus) scene.prose.focus({ preventScroll: true });
+  }
+  function resetScene(scene) {
+    scene.frame.removeAttribute('style');
+    scene.frame.classList.remove('is-present');
+    scene.frame.inert = false;
+    scene.photo.style.removeProperty('transform');
+    scene.photo.style.removeProperty('filter');
+    scene.paragraphs.forEach(paragraph => {
+      paragraph.getAnimations().forEach(animation => animation.cancel());
+      paragraph.removeAttribute('style');
+    });
+    if (scene.portal) {
+      scene.portal.style.removeProperty('opacity');
+      scene.portal.style.removeProperty('pointer-events');
+      scene.portal.tabIndex = 0;
+    }
+  }
+  function shouldAnimate() { return !reducedMotion.matches && !printMedia.matches && innerHeight >= 600; }
+  function preparePaintings(delay) {
+    if (paintings || paintingRequested) return;
+    paintingRequested = true;
+    // Let the first image and its prose appear before compiling the graphics effect.
+    setTimeout(() => {
+      if (!enabled || document.hidden) { paintingRequested = false; return; }
+      paintings = createLivingPaintings(scenes);
+      paintings?.resize();
+      synchronize();
+    }, delay);
+  }
+  function updateMode(initial = false) {
+    const next = shouldAnimate();
+    const restore = enabled ? scenes[dominant] : scenes.reduce((last, scene) => scene.element.getBoundingClientRect().top <= innerHeight * .45 ? scene : last, scenes[0]);
+    cancelFlight();
+    enabled = next;
+    root.classList.toggle('motion', enabled);
+    root.classList.remove('motion-candidate');
+    if (!enabled) {
+      cancelAnimationFrame(frameRequest);
+      frameRequest = 0;
+      scenes.forEach(resetScene);
+      set(mist, 'opacity', '0');
+    }
+    measure();
+    if (initial) introAt = performance.now();
+    const requested = byId.get(location.hash.slice(1));
+    if (initial && requested) goTo(requested);
+    else if (!initial && !printMedia.matches) goTo(restore);
+    else synchronize();
+    if (enabled) preparePaintings(initial && !requested ? 1500 : 100);
+  }
+  function clearPassage() {
+    passage.hidden = true;
+    passage.replaceChildren();
+    passage.getAnimations().forEach(animation => animation.cancel());
+    document.body.removeAttribute('data-transitioning');
+  }
+  function cancelFlight() {
+    if (!flight) return;
+    const token = flight;
+    flight = null;
+    token.animations.forEach(animation => animation.cancel());
+    clearPassage();
+    token.source.portal.focus({ preventScroll: true });
+    synchronize();
+  }
+  function stagePhoto(photo) {
+    const box = photo.getBoundingClientRect();
+    const image = document.createElement('img');
+    image.src = photo.currentSrc || photo.src;
+    image.alt = '';
+    Object.assign(image.style, {
+      left: box.left + 'px', top: box.top + 'px', width: box.width + 'px', height: box.height + 'px',
+      objectPosition: getComputedStyle(photo).objectPosition
+    });
+    return { image, box };
+  }
+  function stageText(scene) {
+    const layer = document.createElement('div');
+    layer.className = scene.element.className.replace('scene', 'passage-text');
+    const prose = scene.prose.cloneNode(true);
+    [...prose.children].forEach((paragraph, index) => {
+      const current = getComputedStyle(scene.paragraphs[index]);
+      Object.assign(paragraph.style, { opacity: current.opacity, transform: current.transform, filter: current.filter });
+    });
+    const box = scene.prose.getBoundingClientRect();
+    Object.assign(prose.style, {
+      left: box.left + 'px', top: box.top + 'px', right: 'auto', bottom: 'auto',
+      width: box.width + 'px', height: box.height + 'px'
+    });
+    prose.removeAttribute('tabindex');
+    layer.append(prose);
+    return layer;
+  }
+  async function enter(source) {
+    if (flight) return;
+    const destination = byId.get(source.portal.hash.slice(1));
+    if (!destination) return;
+    const token = { source, destination, animations: [], staging: false, landed: false };
+    flight = token;
+    try {
+      destination.photo.loading = 'eager';
+      await destination.photo.decode();
+      if (flight !== token) return;
+      if (reducedMotion.matches || !Element.prototype.animate) {
+        goTo(destination, true, true);
+        flight = null;
+        return;
+      }
+      const hotspot = source.portal.getBoundingClientRect();
+      const x = hotspot.left + hotspot.width / 2;
+      const y = hotspot.top + hotspot.height / 2;
+      const leaving = stagePhoto(source.photo);
+      const words = stageText(source);
+      if (enabled) paintScene(destination, destination.start + screenHeight * .38, 1, 0, performance.now(), true);
+      const entering = stagePhoto(destination.photo);
+      if (!enabled) entering.image.style.top = '0px';
+      leaving.image.style.transformOrigin = `${x - leaving.box.left}px ${y - leaving.box.top}px`;
+      entering.image.style.opacity = '0';
+      passage.replaceChildren(leaving.image, entering.image, words);
+      passage.hidden = false;
+      token.staging = true;
+      document.body.dataset.transitioning = 'true';
+      const translate = `translate(${innerWidth / 2 - x}px, ${innerHeight / 2 - y}px)`;
+      token.animations.push(words.animate([
+        { opacity: 1, transform: 'translateY(0)' },
+        { opacity: 0, transform: 'translateY(-7px)' }
+      ], { duration: 260, easing: 'ease-out', fill: 'forwards' }));
+      token.animations.push(leaving.image.animate([
+        { transform: 'translate(0,0) scale(1)', opacity: 1, filter: 'blur(0px)' },
+        { transform: translate + ' scale(4.4)', opacity: 0, filter: 'blur(3px)' }
+      ], { duration: 1250, easing: 'cubic-bezier(.4,0,.1,1)', fill: 'forwards' }));
+      token.animations.push(entering.image.animate([
+        { transform: 'scale(1.15)', opacity: 0, filter: 'blur(3px)' },
+        { transform: 'scale(1)', opacity: 1, filter: 'blur(0px)' }
+      ], { duration: 900, delay: 350, easing: 'cubic-bezier(.2,.6,.2,1)', fill: 'forwards' }));
+      await Promise.allSettled(token.animations.map(animation => animation.finished));
+      if (flight !== token) return;
+      token.landed = true;
+      pointer.x = pointer.y = pointer.targetX = pointer.targetY = 0;
+      goTo(destination, true, true);
+      if (enabled) destination.paragraphs.forEach((paragraph, index) => {
+        token.animations.push(paragraph.animate([
+          { opacity: 0, transform: 'translateY(12px)', filter: 'blur(1.8px)' },
+          { opacity: 1, transform: 'translateY(0)', filter: 'blur(0px)' }
+        ], { duration: 520, delay: index * 90, easing: 'cubic-bezier(.2,.6,.2,1)', fill: 'backwards' }));
+      });
+      const reveal = passage.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 240, fill: 'forwards' });
+      token.animations.push(reveal);
+      await reveal.finished.catch(() => {});
+      if (flight !== token) return;
+      flight = null;
+      clearPassage();
+      schedule();
+    } catch {
+      if (flight !== token) return;
+      flight = null;
+      clearPassage();
+      goTo(destination, true, true);
+    }
+  }
+
+  scenes.forEach(scene => {
+    scene.element.style.setProperty('--distance', distances[scene.index]);
+    scene.photo.loading = 'eager';
+    scene.photo.addEventListener('load', () => { measure(); schedule(); });
+    if (scene.portal) scene.portal.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      enter(scene);
+    });
+  });
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('pointermove', event => {
+    if (!enabled || !finePointer.matches || event.pointerType === 'touch' || flight) return;
+    pointer.targetX = (event.clientX / innerWidth - .5) * 2;
+    pointer.targetY = (event.clientY / innerHeight - .5) * 2;
+    schedule();
+  }, { passive: true });
+  document.documentElement.addEventListener('pointerleave', () => {
+    pointer.targetX = pointer.targetY = 0;
+    schedule();
+  });
+  window.addEventListener('resize', () => {
+    if (!initialized) return;
+    const locationBefore = getLocation();
+    cancelFlight();
+    if (enabled !== shouldAnimate()) { updateMode(); return; }
+    measure();
+    if (enabled) window.scrollTo({ top: scenes[locationBefore.index].start + scenes[locationBefore.index].span * locationBefore.ratio, behavior: 'instant' });
+    synchronize();
+  }, { passive: true });
+  reducedMotion.addEventListener('change', () => updateMode());
+  printMedia.addEventListener('change', () => updateMode());
+  document.addEventListener('keydown', event => {
+    if (!flight) return;
+    if (event.key === 'Escape') { event.preventDefault(); cancelFlight(); }
+    else if (['ArrowDown','ArrowUp','PageDown','PageUp','Home','End',' '].includes(event.key)) event.preventDefault();
+  });
+  const holdScroll = event => { if (flight?.staging) event.preventDefault(); };
+  document.addEventListener('wheel', holdScroll, { passive: false });
+  document.addEventListener('touchmove', holdScroll, { passive: false });
+  window.addEventListener('popstate', () => {
+    cancelFlight();
+    const target = byId.get(location.hash.slice(1));
+    if (target) goTo(target, false, true);
+  });
+  window.addEventListener('hashchange', () => {
+    if (!initialized || flight) return;
+    const target = byId.get(location.hash.slice(1));
+    if (target) goTo(target);
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(frameRequest); frameRequest = 0; }
+    else { lastTick = 0; if (enabled) preparePaintings(100); schedule(); }
+  });
+  const initialScene = byId.get(location.hash.slice(1)) || scenes[0];
+  const initialPhotos = new Set([...scenes.slice(0,2), ...scenes.slice(initialScene.index, initialScene.index + 2)]);
+  Promise.allSettled([...initialPhotos].map(scene => scene.photo.decode())).then(() => {
+    initialized = true;
+    updateMode(true);
+  }).catch(() => {
+    root.classList.remove('motion-candidate', 'motion');
+    enabled = false;
+    scenes.forEach(resetScene);
+    measure();
+  });
+})();
+</script>
+</body>
+</html>

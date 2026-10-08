@@ -1,56 +1,64 @@
-# 山水三记 · Three Literary Landscapes
+# 山水人间 · Eight Literary Works
 
-Three finished, standalone literary web experiences, with a shared entry page:
+Eight complete Chinese classical texts, 85 AI paintings, and a shared collection page.
+Scroll to move through each work; click the subtle rings on lamps, letters, water,
+fish, cups, horses and instruments to enter a closer scene. The reading pages show only
+the original text over the paintings.
 
-| Work | Author | AI paintings | Page |
+| Work | Author | Paintings | Folder |
 | --- | --- | ---: | --- |
-| 湖心亭看雪 | 张岱 | 7 | [Open](hu-xin-ting-kan-xue/index.html) |
-| 岳阳楼记 | 范仲淹 | 12 | [Open](yueyang-lou-ji/index.html) |
-| 醉翁亭记 | 欧阳修 | 12 | [Open](zuiweng-ting-ji/index.html) |
+| 湖心亭看雪 | 张岱 | 7 | [hu-xin-ting-kan-xue](hu-xin-ting-kan-xue/index.html) |
+| 岳阳楼记 | 范仲淹 | 12 | [yueyang-lou-ji](yueyang-lou-ji/index.html) |
+| 醉翁亭记 | 欧阳修 | 12 | [zuiweng-ting-ji](zuiweng-ting-ji/index.html) |
+| 石壕吏 | 杜甫 | 10 | [shi-hao-li](shi-hao-li/index.html) |
+| 茅屋为秋风所破歌 | 杜甫 | 10 | [mao-wu-wei-qiu-feng-suo-po-ge](mao-wu-wei-qiu-feng-suo-po-ge/index.html) |
+| 小石潭记 | 柳宗元 | 10 | [xiao-shi-tan-ji](xiao-shi-tan-ji/index.html) |
+| 滕王阁序 | 王勃 | 18 | [teng-wang-ge-xu](teng-wang-ge-xu/index.html) |
+| 天净沙·秋思 | 马致远 | 6 | [tian-jing-sha-qiu-si](tian-jing-sha-qiu-si/index.html) |
 
-Each work retains its complete original prose, scroll transitions, gentle camera movement, ambient effects and clickable painting details that lead into close views and the author's imagined writing state. The three finished HTML files are copied unchanged from the delivered works. The collection page links to them.
+滕王阁序 includes the concluding eight-line 滕王阁诗. All seven original
+literary texts are complete; 天净沙·秋思 adds its complete five-line text.
+The artwork and writing scenes are artistic
+interpretations, not historical documentation.
 
-## Open locally
+## Run and deploy
 
-Open `index.html` in a browser. The links work directly from disk. Each work also opens independently; its paintings, CSS and JavaScript are embedded. There are no remote fonts, analytics, runtime dependencies or API keys. The collection's three cover images are in `assets/`.
+This is a complete static website. No packages, build step, API keys, remote fonts
+or external runtime services are needed. Keep each work's art folder beside its
+index.html. Pictures are stored once in the collection to keep the complete ZIP
+under 32 MB; the cover pictures reuse those files. This compact delivery resizes
+the paintings to at most 1280 pixels wide and encodes WebP at quality 76.
+The original seven-work package and full-size generated images are preserved
+separately in the recovery workspace.
 
-For a local web server, Python 3 is sufficient:
+For local viewing, run python3 -m http.server 8000 in this folder.
+For GitHub, copy all bundle contents including hidden files to the existing
+bruceyuan357/snow-on-westlake checkout, preserving its Git history and unrelated
+files. Select Settings → Pages → Source → GitHub Actions and push to main.
+The included workflow stages only the public site and preserves an optional CNAME.
+If another Pages workflow already exists, reconcile it to avoid competing deployments.
 
-```sh
-python3 -m http.server 8000
-```
+Expected collection address after a successful deployment:
+https://bruceyuan357.github.io/snow-on-westlake/
 
-## Publish to GitHub Pages
+Each work is available under its folder name at that address. This download does
+not itself claim that anything has been published to GitHub. Give your local agent
+the ZIP and the instructions in PUBLISH_WITH_LOCAL_AGENT.md to perform deployment.
 
-The intended existing repository is `bruceyuan357/snow-on-westlake`. Extract this ZIP into a temporary directory, then copy its contents into that repository's checkout, including `.github/`, `.gitignore` and `.nojekyll`. Preserve the checkout's `.git` folder, history, unrelated files and local changes. The new root `index.html` is the collection page; the original Westlake work is now at `hu-xin-ting-kan-xue/index.html`.
+## Edit or export
 
-In **Settings → Pages → Build and deployment → Source**, select **GitHub Actions**. Commit and push the files to `main`. If the repository uses a different publishing branch, update the workflow's `on.push.branches` first. If another Pages deployment workflow already exists, reconcile it so only one workflow publishes the site.
+Every deployed HTML is editable; modular sources for seven works are included under
+source/. See source/README.md for the two no-dependency Node.js build commands.
+To export any work as a single HTML with embedded pictures, run:
 
-`.github/workflows/pages.yml` stages only the public site, then uses GitHub's official Pages actions to deploy it. Node.js and Python are not needed for deployment. The optional existing `CNAME` is preserved in the website artifact. Documentation and editable sources stay in the repository and are not included in the Pages artifact.
+    python3 tools/export-standalone.py shi-hao-li
 
-Without a custom domain, the expected addresses after successful deployment are:
+With no arguments it exports all eight works to dist/. Each exported ZIP has
+index.html at its root. The five new standalone downloads delivered alongside this
+collection already use this self-contained format.
 
-- Collection: `https://bruceyuan357.github.io/snow-on-westlake/`
-- 湖心亭看雪: `https://bruceyuan357.github.io/snow-on-westlake/hu-xin-ting-kan-xue/`
-- 岳阳楼记: `https://bruceyuan357.github.io/snow-on-westlake/yueyang-lou-ji/`
-- 醉翁亭记: `https://bruceyuan357.github.io/snow-on-westlake/zuiweng-ting-ji/`
-
-These are expected addresses, not a claim that this bundle has already been published. Every internal link is relative so the site also works under a different repository name or a custom domain.
-
-## Local-agent handoff
-
-Give your local coding agent the ZIP and paste the contents of [PUBLISH_WITH_LOCAL_AGENT.md](PUBLISH_WITH_LOCAL_AGENT.md). It contains the repository, deployment steps and verification requirements. The bundle contains no account credentials or Git history.
-
-## Editing
-
-`hu-xin-ting-kan-xue/index.html` is the complete editable source of the original work. For the two longer essays, `literary-pages/` also contains their original text, scene definitions, shared CSS and JavaScript, and 24 optimized WebP paintings. Their generated standalone HTML files are already included.
-
-After editing those sources, regenerate the two longer works with Node.js, without installing packages:
-
-```sh
-node literary-pages/build.cjs
-```
-
-The builder validates that the scene text matches each complete essay. It does not change the collection page or the Westlake work. See [the source notes](literary-pages/README.md) for details. `SHA256SUMS` records the delivered files; regenerate or remove that delivery manifest if you intentionally edit them.
-
-The pages respect reduced-motion preferences, support keyboard-operated hotspots, and retain readable static fallbacks without JavaScript or WebGL. The historical prose is reproduced as literature; the AI paintings and author scenes are artistic interpretations, not exact historical reconstructions or authentic portraits. The original repository's MIT license is retained in `LICENSE`.
+The pages support desktop and phone layouts, keyboard or touch hotspots,
+browser Back, reduced-motion preferences, static reading without JavaScript and
+an original-image fallback without WebGL. Print output contains the prose.
+SHA256SUMS records the delivered files; update it if you intentionally edit them.
+The original MIT license remains in LICENSE.

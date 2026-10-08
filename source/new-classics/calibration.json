@@ -1,0 +1,324 @@
+{
+  "shi-village": {
+    "mobile": "70% 50%",
+    "point": [
+      0.65,
+      0.57
+    ],
+    "fire": [
+      0.65,
+      0.57
+    ]
+  },
+  "shi-escape": {
+    "mobile": "83% 50%"
+  },
+  "shi-voices": {
+    "mobile": "83% 50%"
+  },
+  "shi-letter": {
+    "mobile": "75% 50%",
+    "point": [
+      0.68,
+      0.565
+    ],
+    "fire": [
+      0.891,
+      0.596
+    ]
+  },
+  "shi-hands": {
+    "mobile": "82% 50%"
+  },
+  "shi-family": {
+    "mobile": "80% 50%",
+    "point": [
+      0.625,
+      0.834
+    ],
+    "fire": [
+      0.625,
+      0.834
+    ]
+  },
+  "shi-volunteer": {
+    "mobile": "74% 50%"
+  },
+  "shi-hearth": {
+    "mobile": "70% 50%",
+    "point": [
+      0.577,
+      0.807
+    ],
+    "fire": [
+      0.577,
+      0.807
+    ]
+  },
+  "shi-silence": {
+    "mobile": "86% 50%",
+    "point": [
+      0.758,
+      0.357
+    ],
+    "fire": [
+      0.758,
+      0.357
+    ]
+  },
+  "shi-writing": {
+    "mobile": "83% 50%",
+    "fire": [
+      0.521,
+      0.726
+    ]
+  },
+  "mao-wind": {
+    "mobile": "84% 50%"
+  },
+  "mao-straw": {
+    "mobile": "75% 50%"
+  },
+  "mao-children": {
+    "mobile": "86% 50%",
+    "point": [
+      0.724,
+      0.66
+    ]
+  },
+  "mao-staff": {
+    "mobile": "68% 50%"
+  },
+  "mao-clouds": {
+    "mobile": "78% 50%",
+    "point": [
+      0.689,
+      0.61
+    ],
+    "fire": [
+      0.689,
+      0.61
+    ]
+  },
+  "mao-quilt": {
+    "mobile": "93% 50%",
+    "fire": [
+      0.549,
+      0.532
+    ]
+  },
+  "mao-rain": {
+    "mobile": "80% 50%",
+    "point": [
+      0.638,
+      0.735
+    ],
+    "fire": [
+      0.923,
+      0.446
+    ]
+  },
+  "mao-wakeful": {
+    "mobile": "76% 50%",
+    "fire": [
+      0.554,
+      0.55
+    ]
+  },
+  "mao-shelter": {
+    "mobile": "93% 50%",
+    "point": [
+      0.884,
+      0.578
+    ],
+    "fire": [
+      0.884,
+      0.578
+    ]
+  },
+  "mao-writing": {
+    "mobile": "76% 50%",
+    "fire": [
+      0.498,
+      0.565
+    ]
+  },
+  "xiao-bamboo": {
+    "mobile": "88% 50%"
+  },
+  "xiao-pool": {
+    "mobile": "78% 50%",
+    "point": [
+      0.672,
+      0.647
+    ],
+    "softLight": true
+  },
+  "xiao-stone": {
+    "mobile": "68% 50%",
+    "softLight": true
+  },
+  "xiao-vines": {
+    "mobile": "62% 50%",
+    "point": [
+      0.569,
+      0.527
+    ],
+    "softLight": true
+  },
+  "xiao-fish": {
+    "mobile": "60% 50%",
+    "point": [
+      0.604,
+      0.553
+    ],
+    "softLight": true
+  },
+  "xiao-darting": {
+    "mobile": "63% 50%",
+    "softLight": true
+  },
+  "xiao-stream": {
+    "mobile": "76% 50%",
+    "softLight": true
+  },
+  "xiao-stillness": {
+    "mobile": "72% 50%"
+  },
+  "xiao-leaving": {
+    "mobile": "70% 50%",
+    "point": [
+      0.702,
+      0.51
+    ]
+  },
+  "xiao-writing": {
+    "mobile": "76% 50%",
+    "fire": [
+      0.533,
+      0.58
+    ]
+  },
+  "teng-rivers": {
+    "mobile": "100% 50%"
+  },
+  "teng-treasures": {
+    "mobile": "72% 50%",
+    "point": [
+      0.605,
+      0.713
+    ],
+    "fire": [
+      0.605,
+      0.713
+    ],
+    "softLight": true
+  },
+  "teng-feast": {
+    "mobile": "84% 50%",
+    "softLight": true
+  },
+  "teng-arriving": {
+    "mobile": "82% 50%",
+    "point": [
+      0.699,
+      0.357
+    ],
+    "softLight": true
+  },
+  "teng-pavilion": {
+    "mobile": "72% 50%"
+  },
+  "teng-sunset": {
+    "mobile": "39% 50%",
+    "point": [
+      0.373,
+      0.825
+    ]
+  },
+  "teng-city": {
+    "mobile": "82% 50%"
+  },
+  "teng-fishing": {
+    "mobile": "81% 50%",
+    "point": [
+      0.681,
+      0.515
+    ],
+    "fire": [
+      0.681,
+      0.515
+    ]
+  },
+  "teng-music": {
+    "mobile": "71% 50%",
+    "softLight": true
+  },
+  "teng-sky": {
+    "mobile": "85% 50%"
+  },
+  "teng-travelers": {
+    "mobile": "79% 50%",
+    "point": [
+      0.637,
+      0.767
+    ],
+    "fire": [
+      0.89,
+      0.497
+    ]
+  },
+  "teng-fate": {
+    "mobile": "75% 50%",
+    "fire": [
+      0.824,
+      0.712
+    ]
+  },
+  "teng-scholar": {
+    "mobile": "74% 50%",
+    "softLight": true
+  },
+  "teng-friendship": {
+    "mobile": "79% 50%",
+    "point": [
+      0.646,
+      0.747
+    ],
+    "softLight": true
+  },
+  "teng-resolve": {
+    "mobile": "82% 50%",
+    "point": [
+      0.727,
+      0.657
+    ],
+    "softLight": true
+  },
+  "teng-writing": {
+    "mobile": "76% 50%",
+    "fire": [
+      0.488,
+      0.638
+    ],
+    "mobileBottom": true
+  },
+  "teng-time": {
+    "mobile": "80% 50%",
+    "point": [
+      0.717,
+      0.57
+    ],
+    "fire": [
+      0.717,
+      0.57
+    ]
+  },
+  "teng-river": {
+    "mobile": "76% 50%",
+    "fire": [
+      0.572,
+      0.578
+    ]
+  }
+}

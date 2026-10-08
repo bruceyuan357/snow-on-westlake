@@ -1,0 +1,429 @@
+{
+  "original_bundle_checksum_entries": 114,
+  "all_original_checksum_entries_valid": true,
+  "original_seven_texts_preserved": true,
+  "original_seven_reading_html_byte_identical": true,
+  "source_builds_match_complete_texts": true,
+  "actual_pages_workflow_staging": {
+    "work_pages": 8,
+    "artworks": 85
+  },
+  "compression": {
+    "old_artwork_count": 79,
+    "before_bytes": 21158224,
+    "after_bytes": 10395538,
+    "reduction_percent": 50.87,
+    "max_edge": 1280,
+    "webp_quality": 76,
+    "originals_preserved": true,
+    "new_full_size_png_bytes": 18765186,
+    "new_webp_bytes": 903908,
+    "total_artwork_count": 85,
+    "total_webp_bytes": 11299446
+  },
+  "standalone_zip_checks": [
+    {
+      "work": "hu-xin-ting-kan-xue",
+      "archive_bytes": 792894,
+      "artworks": 7,
+      "sha256": "464bcd7941ff89373087e9ea18e96f5dedec16567e5f3261bcc18b539aec37b2"
+    },
+    {
+      "work": "mao-wu-wei-qiu-feng-suo-po-ge",
+      "archive_bytes": 1494640,
+      "artworks": 10,
+      "sha256": "6d6d284f587f0825243dd767c28d10a39195f96c8210a12936d5fb0854639a92"
+    },
+    {
+      "work": "shi-hao-li",
+      "archive_bytes": 866666,
+      "artworks": 10,
+      "sha256": "28f5d071fb9abdcca1928d2f470c47eb61a1f4519635bc117340af588cf67a9c"
+    },
+    {
+      "work": "teng-wang-ge-xu",
+      "archive_bytes": 2054021,
+      "artworks": 18,
+      "sha256": "8b144260cf41d2bc53f36f874126dc82a0a3c6572912f7b534e30d0c484fe73b"
+    },
+    {
+      "work": "tian-jing-sha-qiu-si",
+      "archive_bytes": 929013,
+      "artworks": 6,
+      "sha256": "92a1d172e2c58c0709f8efbd2e11f3e23a9b8a1cd53728a6e1c391898e1eb8f2"
+    },
+    {
+      "work": "xiao-shi-tan-ji",
+      "archive_bytes": 1845646,
+      "artworks": 10,
+      "sha256": "7ed3391056f0db45cfba7e83e7e13172e2cf9624e15efb28d74f4a4a66330559"
+    },
+    {
+      "work": "yueyang-lou-ji",
+      "archive_bytes": 1384606,
+      "artworks": 12,
+      "sha256": "473eb7e181839464896436b18fd3356b52862c325d221575538555cbcb55b1dd"
+    },
+    {
+      "work": "zuiweng-ting-ji",
+      "archive_bytes": 2204298,
+      "artworks": 12,
+      "sha256": "f9c3497623749daf94ed248b798b7298df3a851ef96dcab9fc9019c66f1e59cd"
+    }
+  ],
+  "browser": {
+    "profiles": [
+      "desktop",
+      "phone",
+      "small-phone"
+    ],
+    "pages": [
+      {
+        "profile": "desktop",
+        "work": "hu-xin-ting-kan-xue",
+        "artworks": 7
+      },
+      {
+        "profile": "desktop",
+        "work": "yueyang-lou-ji",
+        "artworks": 12
+      },
+      {
+        "profile": "desktop",
+        "work": "zuiweng-ting-ji",
+        "artworks": 12
+      },
+      {
+        "profile": "desktop",
+        "work": "shi-hao-li",
+        "artworks": 10
+      },
+      {
+        "profile": "desktop",
+        "work": "mao-wu-wei-qiu-feng-suo-po-ge",
+        "artworks": 10
+      },
+      {
+        "profile": "desktop",
+        "work": "xiao-shi-tan-ji",
+        "artworks": 10
+      },
+      {
+        "profile": "desktop",
+        "work": "teng-wang-ge-xu",
+        "artworks": 18
+      },
+      {
+        "profile": "desktop",
+        "work": "tian-jing-sha-qiu-si",
+        "artworks": 6
+      },
+      {
+        "profile": "phone",
+        "work": "hu-xin-ting-kan-xue",
+        "artworks": 7
+      },
+      {
+        "profile": "phone",
+        "work": "yueyang-lou-ji",
+        "artworks": 12
+      },
+      {
+        "profile": "phone",
+        "work": "zuiweng-ting-ji",
+        "artworks": 12
+      },
+      {
+        "profile": "phone",
+        "work": "shi-hao-li",
+        "artworks": 10
+      },
+      {
+        "profile": "phone",
+        "work": "mao-wu-wei-qiu-feng-suo-po-ge",
+        "artworks": 10
+      },
+      {
+        "profile": "phone",
+        "work": "xiao-shi-tan-ji",
+        "artworks": 10
+      },
+      {
+        "profile": "phone",
+        "work": "teng-wang-ge-xu",
+        "artworks": 18
+      },
+      {
+        "profile": "phone",
+        "work": "tian-jing-sha-qiu-si",
+        "artworks": 6
+      },
+      {
+        "profile": "small-phone",
+        "work": "hu-xin-ting-kan-xue",
+        "artworks": 7
+      },
+      {
+        "profile": "small-phone",
+        "work": "yueyang-lou-ji",
+        "artworks": 12
+      },
+      {
+        "profile": "small-phone",
+        "work": "zuiweng-ting-ji",
+        "artworks": 12
+      },
+      {
+        "profile": "small-phone",
+        "work": "shi-hao-li",
+        "artworks": 10
+      },
+      {
+        "profile": "small-phone",
+        "work": "mao-wu-wei-qiu-feng-suo-po-ge",
+        "artworks": 10
+      },
+      {
+        "profile": "small-phone",
+        "work": "xiao-shi-tan-ji",
+        "artworks": 10
+      },
+      {
+        "profile": "small-phone",
+        "work": "teng-wang-ge-xu",
+        "artworks": 18
+      },
+      {
+        "profile": "small-phone",
+        "work": "tian-jing-sha-qiu-si",
+        "artworks": 6
+      }
+    ],
+    "transitions": [
+      {
+        "work": "hu-xin-ting-kan-xue",
+        "source": "meeting",
+        "target": "hearth"
+      },
+      {
+        "work": "hu-xin-ting-kan-xue",
+        "source": "hearth",
+        "target": "wine"
+      },
+      {
+        "work": "hu-xin-ting-kan-xue",
+        "source": "wine",
+        "target": "memory"
+      },
+      {
+        "work": "yueyang-lou-ji",
+        "source": "dusk",
+        "target": "sorrow"
+      },
+      {
+        "work": "yueyang-lou-ji",
+        "source": "spring",
+        "target": "banks"
+      },
+      {
+        "work": "yueyang-lou-ji",
+        "source": "moon",
+        "target": "wine"
+      },
+      {
+        "work": "yueyang-lou-ji",
+        "source": "wine",
+        "target": "heart"
+      },
+      {
+        "work": "yueyang-lou-ji",
+        "source": "heart",
+        "target": "concern"
+      },
+      {
+        "work": "zuiweng-ting-ji",
+        "source": "spring",
+        "target": "pavilion"
+      },
+      {
+        "work": "zuiweng-ting-ji",
+        "source": "banquet",
+        "target": "guests"
+      },
+      {
+        "work": "zuiweng-ting-ji",
+        "source": "guests",
+        "target": "drunk"
+      },
+      {
+        "work": "zuiweng-ting-ji",
+        "source": "return",
+        "target": "writing"
+      },
+      {
+        "work": "shi-hao-li",
+        "source": "village",
+        "target": "escape"
+      },
+      {
+        "work": "shi-hao-li",
+        "source": "letter",
+        "target": "hands"
+      },
+      {
+        "work": "shi-hao-li",
+        "source": "family",
+        "target": "volunteer"
+      },
+      {
+        "work": "shi-hao-li",
+        "source": "hearth",
+        "target": "silence"
+      },
+      {
+        "work": "shi-hao-li",
+        "source": "silence",
+        "target": "writing"
+      },
+      {
+        "work": "mao-wu-wei-qiu-feng-suo-po-ge",
+        "source": "children",
+        "target": "staff"
+      },
+      {
+        "work": "mao-wu-wei-qiu-feng-suo-po-ge",
+        "source": "clouds",
+        "target": "quilt"
+      },
+      {
+        "work": "mao-wu-wei-qiu-feng-suo-po-ge",
+        "source": "rain",
+        "target": "wakeful"
+      },
+      {
+        "work": "mao-wu-wei-qiu-feng-suo-po-ge",
+        "source": "shelter",
+        "target": "writing"
+      },
+      {
+        "work": "xiao-shi-tan-ji",
+        "source": "pool",
+        "target": "stone"
+      },
+      {
+        "work": "xiao-shi-tan-ji",
+        "source": "vines",
+        "target": "fish"
+      },
+      {
+        "work": "xiao-shi-tan-ji",
+        "source": "fish",
+        "target": "darting"
+      },
+      {
+        "work": "xiao-shi-tan-ji",
+        "source": "leaving",
+        "target": "writing"
+      },
+      {
+        "work": "teng-wang-ge-xu",
+        "source": "treasures",
+        "target": "feast"
+      },
+      {
+        "work": "teng-wang-ge-xu",
+        "source": "arriving",
+        "target": "pavilion"
+      },
+      {
+        "work": "teng-wang-ge-xu",
+        "source": "sunset",
+        "target": "fishing"
+      },
+      {
+        "work": "teng-wang-ge-xu",
+        "source": "fishing",
+        "target": "music"
+      },
+      {
+        "work": "teng-wang-ge-xu",
+        "source": "travelers",
+        "target": "fate"
+      },
+      {
+        "work": "teng-wang-ge-xu",
+        "source": "resolve",
+        "target": "scholar"
+      },
+      {
+        "work": "teng-wang-ge-xu",
+        "source": "friendship",
+        "target": "writing"
+      },
+      {
+        "work": "teng-wang-ge-xu",
+        "source": "time",
+        "target": "river"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "road",
+        "target": "horse"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "sunset",
+        "target": "writing"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "road",
+        "target": "horse"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "sunset",
+        "target": "writing"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "road",
+        "target": "horse"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "sunset",
+        "target": "writing"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "road",
+        "target": "horse"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "sunset",
+        "target": "writing"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "road",
+        "target": "horse"
+      },
+      {
+        "work": "tian-jing-sha-qiu-si",
+        "source": "sunset",
+        "target": "writing"
+      }
+    ],
+    "errors": [],
+    "failures": [],
+    "back_reduced_motion_and_interrupt": "passed",
+    "webgl_fallback": "passed",
+    "without_javascript": "passed",
+    "native_file_opening": "Blocked by cloud browser policy: ERR_BLOCKED_BY_ADMINISTRATOR. Check on the owner’s local machine.",
+    "offline_origin": "blob, networking disabled",
+    "offline_standalone": "passed"
+  },
+  "publication": "Prepared for the owner’s local GitHub agent; no new deployment claimed."
+}
